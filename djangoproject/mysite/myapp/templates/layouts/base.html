@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/styles/main.css'%}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{% url 'index' %}">home</a>
+        <a href="{% url 'about' %}">about</a>
+        <a href="{% url 'projects' %}">projects</a>
+        <a href="{% url 'tasks' %}">tasks</a>
+        <a href="{% url 'create_task' %}">create task</a>
+        <a href="{% url 'create_project' %}">create project</a>
+    </nav>
+    
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
